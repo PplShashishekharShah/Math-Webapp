@@ -1,4 +1,14 @@
 (function() {
+    // Preload images
+    const imagesToPreload = [
+        'assets/math-bg-streched.webp',
+        'assets/question-frame-strched.png'
+    ];
+    imagesToPreload.forEach(src => {
+        const img = new Image();
+        img.src = src;
+    });
+
     const appEl = document.getElementById('app');
     const promptEl = document.getElementById('prompt');
     const optionsEl = document.getElementById('options');
