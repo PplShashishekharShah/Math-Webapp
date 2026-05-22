@@ -1,4 +1,5 @@
 (function() {
+    const appEl = document.getElementById('app');
     const promptEl = document.getElementById('prompt');
     const optionsEl = document.getElementById('options');
     const inputContainer = document.getElementById('input-container');
@@ -6,6 +7,7 @@
     const submitBtn = document.getElementById('submit-btn');
 
     let currentQuestion = null;
+    let isTransitioning = false;
 
     // Placeholder questions for Grade 5
     const mockQuestions = [
@@ -61,17 +63,38 @@
         } else if (question.answerType === 'input') {
             inputContainer.style.display = 'flex';
             answerInput.value = '';
-            answerInput.focus();
+            setTimeout(() => answerInput.focus(), 100);
         }
+        
+        isTransitioning = false;
+        appEl.classList.remove('correct-flash', 'wrong-flash');
     }
 
     function submitAnswer(answer) {
+        if (isTransitioning) return;
+        
+        const isCorrect = String(answer).trim().toLowerCase() === String(currentQuestion.correctAnswer).trim().toLowerCase();
+        
+        isTransitioning = true;
+        
+        if (isCorrect) {
+            appEl.classList.add('correct-flash');
+        } else {
+            appEl.classList.add('wrong-flash');
+        }
+
         // Send answer to Starborn
         window.parent.postMessage({
             type: 'playerAnswer',
             answer: answer,
+            isCorrect: isCorrect, // UI feedback optimization
             questionId: currentQuestion.id
         }, '*');
+        
+        // Brief delay for feedback before Starborn might close or request next
+        setTimeout(() => {
+            appEl.classList.remove('correct-flash', 'wrong-flash');
+        }, 600);
     }
 
     submitBtn.onclick = () => {
@@ -90,11 +113,9 @@
     window.addEventListener('message', (event) => {
         const message = event.data;
         if (message.type === 'getNextQuestion') {
-            // Pick a random question for now
             const nextIdx = Math.floor(Math.random() * mockQuestions.length);
             const question = mockQuestions[nextIdx];
             
-            // Send question metadata back to Starborn
             window.parent.postMessage({
                 type: 'questionData',
                 data: {
@@ -110,13 +131,10 @@
         }
     });
 
-    // Notify Starborn that the math webapp is ready
-    // We send this multiple times or wait a bit to ensure parent is listening
     const notifyReady = () => {
         window.parent.postMessage({ type: 'mathWebappReady' }, '*');
     };
 
     notifyReady();
-    // Also send when fully loaded
     window.onload = notifyReady;
 })();
