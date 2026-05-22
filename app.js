@@ -1,8 +1,8 @@
 (function() {
     // Preload images
     const imagesToPreload = [
-        'assets/math-bg-streched.webp',
-        'assets/question-frame-strched.png'
+        'assets/math-bg-streched_final.webp',
+        'assets/question-frame-strched_final.png'
     ];
     imagesToPreload.forEach(src => {
         const img = new Image();
