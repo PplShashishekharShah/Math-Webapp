@@ -8,6 +8,7 @@
 
     let currentQuestion = null;
     let isTransitioning = false;
+    let usedQuestions = []; // Track used questions per chest
 
     // Placeholder questions for Grade 5
     const mockQuestions = [
@@ -49,6 +50,7 @@
     function renderQuestion(question) {
         currentQuestion = question;
         promptEl.textContent = question.prompt;
+        promptEl.classList.remove('loading');
         optionsEl.innerHTML = '';
         inputContainer.style.display = 'none';
 
@@ -113,8 +115,22 @@
     window.addEventListener('message', (event) => {
         const message = event.data;
         if (message.type === 'getNextQuestion') {
-            const nextIdx = Math.floor(Math.random() * mockQuestions.length);
-            const question = mockQuestions[nextIdx];
+            // Get unused questions
+            const availableQuestions = mockQuestions.filter(q => !usedQuestions.includes(q.id));
+            
+            // If all questions have been used, reset the used list
+            if (availableQuestions.length === 0) {
+                usedQuestions = [];
+            }
+            
+            // Select a random question from available ones
+            const nextIdx = Math.floor(Math.random() * (availableQuestions.length || mockQuestions.length));
+            const question = availableQuestions.length > 0 ? availableQuestions[nextIdx] : mockQuestions[nextIdx];
+            
+            // Mark this question as used
+            if (!usedQuestions.includes(question.id)) {
+                usedQuestions.push(question.id);
+            }
             
             window.parent.postMessage({
                 type: 'questionData',
