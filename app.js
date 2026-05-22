@@ -124,6 +124,18 @@
 
     window.addEventListener('message', (event) => {
         const message = event.data;
+        if (message.type === 'reset') {
+            currentQuestion = null;
+            isTransitioning = false;
+            usedQuestions = [];
+            promptEl.textContent = 'Loading question...';
+            promptEl.classList.add('loading');
+            optionsEl.innerHTML = '';
+            inputContainer.style.display = 'none';
+            appEl.classList.remove('correct-flash', 'wrong-flash');
+            return;
+        }
+
         if (message.type === 'getNextQuestion') {
             // Get unused questions
             const availableQuestions = mockQuestions.filter(q => !usedQuestions.includes(q.id));
@@ -158,9 +170,14 @@
     });
 
     const notifyReady = () => {
+        if (window.hasNotifiedReady) return;
+        window.hasNotifiedReady = true;
         window.parent.postMessage({ type: 'mathWebappReady' }, '*');
     };
 
-    notifyReady();
-    window.onload = notifyReady;
+    if (document.readyState === 'complete') {
+        notifyReady();
+    } else {
+        window.addEventListener('load', notifyReady);
+    }
 })();
