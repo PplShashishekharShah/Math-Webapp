@@ -25,7 +25,7 @@ body {
     background: url('assets/math-bg-streched_final.webp') no-repeat center center;
     background-size: cover;
     background-position: center center;
-    background-attachment: fixed;
+    background-attachment: scroll;
     color: var(--panel-text);
     overflow: hidden;
     display: flex;
@@ -48,9 +48,8 @@ body {
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    position: absolute;
-    bottom: 60px;
-    margin-top: 50px;
+    /* Center in flex layout without absolute position offset */
+    margin: auto;
     /* animation: appEntrance 0.8s cubic-bezier(0.22, 0.7, 0.3, 1) forwards; */
     /* will-change: transform, opacity;
     backface-visibility: hidden; */
@@ -231,13 +230,82 @@ body {
 /* Responsive adjustments */
 @media (max-width: 600px) {
     #app {
-        padding: 50px 30px;
+        padding: 35px 25px;
     }
     #prompt {
-        font-size: 24px;
+        font-size: 20px;
     }
     .option-btn {
-        padding: 12px;
-        font-size: 18px;
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+}
+
+/* Landscape/short viewport responsiveness */
+@media (max-height: 580px) {
+    #app {
+        min-height: 240px;
+        padding: 20px 35px;
+    }
+    #prompt {
+        font-size: 16px;
+        line-height: 1.2;
+    }
+    #options {
+        gap: 8px;
+        margin: 4px auto;
+    }
+    .option-btn {
+        padding: 8px 10px;
+        font-size: 12px;
+        min-height: 30px;
+    }
+    #input-container {
+        gap: 8px;
+        margin-top: 2px;
+    }
+    #answer-input {
+        padding: 8px 10px;
+        font-size: 12px;
+        min-height: 30px;
+    }
+    #submit-btn {
+        padding: 8px 14px;
+        font-size: 12px;
+        min-height: 30px;
+    }
+}
+
+@media (max-height: 420px) {
+    #app {
+        min-height: 180px;
+        padding: 15px 30px;
+    }
+    #prompt {
+        font-size: 14px;
+        line-height: 1.2;
+    }
+    #options {
+        gap: 6px;
+        margin: 2px auto;
+    }
+    .option-btn {
+        padding: 6px 8px;
+        font-size: 11px;
+        min-height: 26px;
+    }
+    #input-container {
+        gap: 6px;
+        margin-top: 0px;
+    }
+    #answer-input {
+        padding: 6px 8px;
+        font-size: 11px;
+        min-height: 26px;
+    }
+    #submit-btn {
+        padding: 6px 12px;
+        font-size: 11px;
+        min-height: 26px;
     }
 }
