@@ -1,465 +1,332 @@
 /**
  * mockQuestions.js
  * Grade-based MCQ question bank for the Starborn math webapp.
- * 10 MCQ questions per grade level (grades 3–8) — 60 questions total.
- * All questions use answerType: 'multiple-choice' only (no text-input).
- *
- * Exposed as window.STARBORN_QUESTION_BANK so app.js can import it
- * without a module bundler.
+ * Contains exactly 50 MCQ questions per grade level (grades 3–8) — 300 questions total.
+ * All questions use answerType: 'multiple-choice' only.
  */
 (function () {
   "use strict";
 
-  /** @type {Record<number, Array<{id:string, prompt:string, answerType:string, choices:string[], correctAnswer:string}>>} */
   var QUESTION_BANK = {
-
-    // ── Grade 3 ──────────────────────────────────────────────────────────────
+    // ── GRADE 3 (50 Questions) ──────────────────────────────────────────────
     3: [
-      {
-        id: "g3q1",
-        prompt: "What is 7 × 8?",
-        answerType: "multiple-choice",
-        choices: ["48", "54", "56", "63"],
-        correctAnswer: "56"
-      },
-      {
-        id: "g3q2",
-        prompt: "Which fraction is greater: 3/4 or 1/2?",
-        answerType: "multiple-choice",
-        choices: ["1/2", "3/4", "They are equal", "Cannot tell"],
-        correctAnswer: "3/4"
-      },
-      {
-        id: "g3q3",
-        prompt: "A rectangle has a length of 6 and a width of 3. What is its perimeter?",
-        answerType: "multiple-choice",
-        choices: ["9", "18", "12", "24"],
-        correctAnswer: "18"
-      },
-      {
-        id: "g3q4",
-        prompt: "What is 45 ÷ 5?",
-        answerType: "multiple-choice",
-        choices: ["6", "7", "8", "9"],
-        correctAnswer: "9"
-      },
-      {
-        id: "g3q5",
-        prompt: "How many minutes are in 2 hours?",
-        answerType: "multiple-choice",
-        choices: ["60", "90", "100", "120"],
-        correctAnswer: "120"
-      },
-      {
-        id: "g3q6",
-        prompt: "What is 9 × 9?",
-        answerType: "multiple-choice",
-        choices: ["72", "81", "90", "63"],
-        correctAnswer: "81"
-      },
-      {
-        id: "g3q7",
-        prompt: "Which shape has 4 equal sides and 4 right angles?",
-        answerType: "multiple-choice",
-        choices: ["Rectangle", "Rhombus", "Square", "Triangle"],
-        correctAnswer: "Square"
-      },
-      {
-        id: "g3q8",
-        prompt: "Sam had 84 apples and gave 37 to friends. How many are left?",
-        answerType: "multiple-choice",
-        choices: ["41", "47", "51", "57"],
-        correctAnswer: "47"
-      },
-      {
-        id: "g3q9",
-        prompt: "What is 352 + 148?",
-        answerType: "multiple-choice",
-        choices: ["480", "490", "500", "510"],
-        correctAnswer: "500"
-      },
-      {
-        id: "g3q10",
-        prompt: "A bag has 3 apples and 5 oranges. What fraction of the fruits are apples?",
-        answerType: "multiple-choice",
-        choices: ["3/5", "5/8", "3/8", "5/3"],
-        correctAnswer: "3/8"
-      }
+      { id: "g3q1", prompt: "What is 7 × 8?", answerType: "multiple-choice", choices: ["48", "54", "56", "63"], correctAnswer: "56" },
+      { id: "g3q2", prompt: "Which fraction is greater: 3/4 or 1/2?", answerType: "multiple-choice", choices: ["1/2", "3/4", "They are equal", "Cannot tell"], correctAnswer: "3/4" },
+      { id: "g3q3", prompt: "A rectangle has a length of 6 and a width of 3. What is its perimeter?", answerType: "multiple-choice", choices: ["9", "18", "12", "24"], correctAnswer: "18" },
+      { id: "g3q4", prompt: "What is 45 ÷ 5?", answerType: "multiple-choice", choices: ["6", "7", "8", "9"], correctAnswer: "9" },
+      { id: "g3q5", prompt: "How many minutes are in 2 hours?", answerType: "multiple-choice", choices: ["60", "90", "100", "120"], correctAnswer: "120" },
+      { id: "g3q6", prompt: "What is 9 × 9?", answerType: "multiple-choice", choices: ["72", "81", "90", "63"], correctAnswer: "81" },
+      { id: "g3q7", prompt: "Which shape has 4 equal sides and 4 right angles?", answerType: "multiple-choice", choices: ["Rectangle", "Rhombus", "Square", "Triangle"], correctAnswer: "Square" },
+      { id: "g3q8", prompt: "Sam had 84 apples and gave 37 to friends. How many are left?", answerType: "multiple-choice", choices: ["41", "47", "51", "57"], correctAnswer: "47" },
+      { id: "g3q9", prompt: "What is 352 + 148?", answerType: "multiple-choice", choices: ["480", "490", "500", "510"], correctAnswer: "500" },
+      { id: "g3q10", prompt: "A bag has 3 apples and 5 oranges. What fraction of the fruits are apples?", answerType: "multiple-choice", choices: ["3/5", "5/8", "3/8", "5/3"], correctAnswer: "3/8" },
+      { id: "g3q11", prompt: "What is 100 − 36?", answerType: "multiple-choice", choices: ["54", "64", "74", "84"], correctAnswer: "64" },
+      { id: "g3q12", prompt: "Which number is even?", answerType: "multiple-choice", choices: ["13", "27", "42", "55"], correctAnswer: "42" },
+      { id: "g3q13", prompt: "What is 6 × 7?", answerType: "multiple-choice", choices: ["36", "42", "48", "54"], correctAnswer: "42" },
+      { id: "g3q14", prompt: "What is 80 ÷ 10?", answerType: "multiple-choice", choices: ["6", "7", "8", "9"], correctAnswer: "8" },
+      { id: "g3q15", prompt: "How many months are in a year?", answerType: "multiple-choice", choices: ["10", "12", "24", "305"], correctAnswer: "12" },
+      { id: "g3q16", prompt: "What is 135 + 242?", answerType: "multiple-choice", choices: ["375", "377", "387", "397"], correctAnswer: "377" },
+      { id: "g3q17", prompt: "What is 500 − 150?", answerType: "multiple-choice", choices: ["350", "400", "450", "300"], correctAnswer: "350" },
+      { id: "g3q18", prompt: "Which is a cylinder?", answerType: "multiple-choice", choices: ["A ball", "A soda can", "A tissue box", "An ice cream cone"], correctAnswer: "A soda can" },
+      { id: "g3q19", prompt: "What is 4 × 9?", answerType: "multiple-choice", choices: ["32", "36", "40", "45"], correctAnswer: "36" },
+      { id: "g3q20", prompt: "What is 72 ÷ 9?", answerType: "multiple-choice", choices: ["6", "7", "8", "9"], correctAnswer: "8" },
+      { id: "g3q21", prompt: "Which fraction is equal to 1/2?", answerType: "multiple-choice", choices: ["2/3", "2/4", "3/5", "4/6"], correctAnswer: "2/4" },
+      { id: "g3q22", prompt: "How many vertices does a triangle have?", answerType: "multiple-choice", choices: ["2", "3", "4", "5"], correctAnswer: "3" },
+      { id: "g3q23", prompt: "What is 3 × 12?", answerType: "multiple-choice", choices: ["30", "33", "36", "40"], correctAnswer: "36" },
+      { id: "g3q24", prompt: "What is 64 ÷ 8?", answerType: "multiple-choice", choices: ["6", "7", "8", "9"], correctAnswer: "8" },
+      { id: "g3q25", prompt: "What is the value of the digit 7 in 754?", answerType: "multiple-choice", choices: ["7", "70", "700", "7000"], correctAnswer: "700" },
+      { id: "g3q26", prompt: "What is 93 − 45?", answerType: "multiple-choice", choices: ["42", "48", "52", "58"], correctAnswer: "48" },
+      { id: "g3q27", prompt: "If a class has 4 rows of desks with 6 desks in each row, how many desks are there?", answerType: "multiple-choice", choices: ["10", "20", "24", "28"], correctAnswer: "24" },
+      { id: "g3q28", prompt: "What is 7 × 9?", answerType: "multiple-choice", choices: ["56", "63", "70", "72"], correctAnswer: "63" },
+      { id: "g3q29", prompt: "A square has a side length of 5 cm. What is its perimeter?", answerType: "multiple-choice", choices: ["10 cm", "15 cm", "20 cm", "25 cm"], correctAnswer: "20 cm" },
+      { id: "g3q30", prompt: "How many seconds are in one minute?", answerType: "multiple-choice", choices: ["30", "60", "90", "120"], correctAnswer: "60" },
+      { id: "g3q31", prompt: "What is 300 + 40 + 7?", answerType: "multiple-choice", choices: ["347", "374", "3047", "437"], correctAnswer: "347" },
+      { id: "g3q32", prompt: "What is 8 × 4?", answerType: "multiple-choice", choices: ["24", "28", "32", "36"], correctAnswer: "32" },
+      { id: "g3q33", prompt: "What is 42 ÷ 6?", answerType: "multiple-choice", choices: ["6", "7", "8", "9"], correctAnswer: "7" },
+      { id: "g3q34", prompt: "Which of these is a sphere?", answerType: "multiple-choice", choices: ["A party hat", "A cardboard box", "A basketball", "A soup can"], correctAnswer: "A basketball" },
+      { id: "g3q35", prompt: "What is 145 + 328?", answerType: "multiple-choice", choices: ["463", "473", "483", "493"], correctAnswer: "473" },
+      { id: "g3q36", prompt: "What is 21 ÷ 3?", answerType: "multiple-choice", choices: ["6", "7", "8", "9"], correctAnswer: "7" },
+      { id: "g3q37", prompt: "How many sides does a pentagon have?", answerType: "multiple-choice", choices: ["4", "5", "6", "8"], correctAnswer: "5" },
+      { id: "g3q38", prompt: "What is 8 × 8?", answerType: "multiple-choice", choices: ["56", "60", "64", "72"], correctAnswer: "64" },
+      { id: "g3q39", prompt: "Which number is odd?", answerType: "multiple-choice", choices: ["12", "26", "35", "48"], correctAnswer: "35" },
+      { id: "g3q40", prompt: "What is 700 − 250?", answerType: "multiple-choice", choices: ["350", "400", "450", "500"], correctAnswer: "450" },
+      { id: "g3q41", prompt: "What fraction of a group is 4 items out of 10 items?", answerType: "multiple-choice", choices: ["4/10", "1/4", "6/10", "10/4"], correctAnswer: "4/10" },
+      { id: "g3q42", prompt: "What is 5 × 12?", answerType: "multiple-choice", choices: ["50", "55", "60", "65"], correctAnswer: "60" },
+      { id: "g3q43", prompt: "What is 36 ÷ 4?", answerType: "multiple-choice", choices: ["7", "8", "9", "10"], correctAnswer: "9" },
+      { id: "g3q44", prompt: "How many corners does a cube have?", answerType: "multiple-choice", choices: ["4", "6", "8", "12"], correctAnswer: "8" },
+      { id: "g3q45", prompt: "What is 432 + 256?", answerType: "multiple-choice", choices: ["678", "688", "698", "788"], correctAnswer: "688" },
+      { id: "g3q46", prompt: "What is 9 × 3?", answerType: "multiple-choice", choices: ["24", "27", "30", "36"], correctAnswer: "27" },
+      { id: "g3q47", prompt: "What is 48 ÷ 6?", answerType: "multiple-choice", choices: ["6", "7", "8", "9"], correctAnswer: "8" },
+      { id: "g3q48", prompt: "A triangle with all sides equal is called:", answerType: "multiple-choice", choices: ["Isosceles", "Equilateral", "Scalene", "Right-angled"], correctAnswer: "Equilateral" },
+      { id: "g3q49", prompt: "What is 90 − 23?", answerType: "multiple-choice", choices: ["63", "67", "73", "77"], correctAnswer: "67" },
+      { id: "g3q50", prompt: "If you have 3 packs of crayons, and each pack has 8 crayons, how many crayons do you have?", answerType: "multiple-choice", choices: ["11", "18", "24", "28"], correctAnswer: "24" }
     ],
-
-    // ── Grade 4 ──────────────────────────────────────────────────────────────
+    // ── GRADE 4 (50 Questions) ──────────────────────────────────────────────
     4: [
-      {
-        id: "g4q1",
-        prompt: "What is 12 × 15?",
-        answerType: "multiple-choice",
-        choices: ["150", "160", "170", "180"],
-        correctAnswer: "180"
-      },
-      {
-        id: "g4q2",
-        prompt: "What is 2/3 of 24?",
-        answerType: "multiple-choice",
-        choices: ["8", "12", "16", "18"],
-        correctAnswer: "16"
-      },
-      {
-        id: "g4q3",
-        prompt: "What is 3.5 + 2.7?",
-        answerType: "multiple-choice",
-        choices: ["5.2", "5.8", "6.2", "6.5"],
-        correctAnswer: "6.2"
-      },
-      {
-        id: "g4q4",
-        prompt: "A rectangle has an area of 48 and a width of 6. What is its length?",
-        answerType: "multiple-choice",
-        choices: ["6", "7", "8", "9"],
-        correctAnswer: "8"
-      },
-      {
-        id: "g4q5",
-        prompt: "What is 125 ÷ 5?",
-        answerType: "multiple-choice",
-        choices: ["15", "20", "25", "30"],
-        correctAnswer: "25"
-      },
-      {
-        id: "g4q6",
-        prompt: "Round 3,847 to the nearest hundred.",
-        answerType: "multiple-choice",
-        choices: ["3,000", "3,800", "3,900", "4,000"],
-        correctAnswer: "3,800"
-      },
-      {
-        id: "g4q7",
-        prompt: "What is 5/8 − 1/8?",
-        answerType: "multiple-choice",
-        choices: ["1/4", "3/8", "1/2", "3/4"],
-        correctAnswer: "1/2"
-      },
-      {
-        id: "g4q8",
-        prompt: "How many degrees are in a right angle?",
-        answerType: "multiple-choice",
-        choices: ["45°", "90°", "180°", "360°"],
-        correctAnswer: "90°"
-      },
-      {
-        id: "g4q9",
-        prompt: "What is 304 × 3?",
-        answerType: "multiple-choice",
-        choices: ["892", "902", "912", "922"],
-        correctAnswer: "912"
-      },
-      {
-        id: "g4q10",
-        prompt: "A hexagon has how many sides?",
-        answerType: "multiple-choice",
-        choices: ["5", "6", "7", "8"],
-        correctAnswer: "6"
-      }
+      { id: "g4q1", prompt: "What is 12 × 15?", answerType: "multiple-choice", choices: ["150", "160", "170", "180"], correctAnswer: "180" },
+      { id: "g4q2", prompt: "What is 2/3 of 24?", answerType: "multiple-choice", choices: ["8", "12", "16", "18"], correctAnswer: "16" },
+      { id: "g4q3", prompt: "What is 3.5 + 2.7?", answerType: "multiple-choice", choices: ["5.2", "5.8", "6.2", "6.5"], correctAnswer: "6.2" },
+      { id: "g4q4", prompt: "A rectangle has an area of 48 and a width of 6. What is its length?", answerType: "multiple-choice", choices: ["6", "7", "8", "9"], correctAnswer: "8" },
+      { id: "g4q5", prompt: "What is 125 ÷ 5?", answerType: "multiple-choice", choices: ["15", "20", "25", "30"], correctAnswer: "25" },
+      { id: "g4q6", prompt: "Round 3,847 to the nearest hundred.", answerType: "multiple-choice", choices: ["3,000", "3,800", "3,900", "4,000"], correctAnswer: "3,800" },
+      { id: "g4q7", prompt: "What is 5/8 − 1/8?", answerType: "multiple-choice", choices: ["1/4", "3/8", "1/2", "3/4"], correctAnswer: "1/2" },
+      { id: "g4q8", prompt: "How many degrees are in a right angle?", answerType: "multiple-choice", choices: ["45°", "90°", "180°", "360°"], correctAnswer: "90°" },
+      { id: "g4q9", prompt: "What is 304 × 3?", answerType: "multiple-choice", choices: ["892", "902", "912", "922"], correctAnswer: "912" },
+      { id: "g4q10", prompt: "A hexagon has how many sides?", answerType: "multiple-choice", choices: ["5", "6", "7", "8"], correctAnswer: "6" },
+      { id: "g4q11", prompt: "What is 15 × 6?", answerType: "multiple-choice", choices: ["80", "90", "100", "110"], correctAnswer: "90" },
+      { id: "g4q12", prompt: "Which fraction is equivalent to 2/5?", answerType: "multiple-choice", choices: ["4/10", "3/8", "2/10", "4/5"], correctAnswer: "4/10" },
+      { id: "g4q13", prompt: "What is 1.45 + 0.32?", answerType: "multiple-choice", choices: ["1.75", "1.77", "1.87", "1.97"], correctAnswer: "1.77" },
+      { id: "g4q14", prompt: "What is 240 ÷ 6?", answerType: "multiple-choice", choices: ["30", "40", "50", "60"], correctAnswer: "40" },
+      { id: "g4q15", prompt: "Round 7,294 to the nearest thousand.", answerType: "multiple-choice", choices: ["7,000", "7,300", "8,000", "7,200"], correctAnswer: "7,000" },
+      { id: "g4q16", prompt: "What is 4/10 + 3/10?", answerType: "multiple-choice", choices: ["7/20", "7/10", "12/10", "1/10"], correctAnswer: "7/10" },
+      { id: "g4q17", prompt: "An angle that measures 120 degrees is called:", answerType: "multiple-choice", choices: ["Acute", "Right", "Obtuse", "Straight"], correctAnswer: "Obtuse" },
+      { id: "g4q18", prompt: "What is 405 × 4?", answerType: "multiple-choice", choices: ["1600", "1620", "1640", "1800"], correctAnswer: "1620" },
+      { id: "g4q19", prompt: "An octagon has how many sides?", answerType: "multiple-choice", choices: ["6", "7", "8", "10"], correctAnswer: "8" },
+      { id: "g4q20", prompt: "What is 14 × 7?", answerType: "multiple-choice", choices: ["84", "94", "98", "108"], correctAnswer: "98" },
+      { id: "g4q21", prompt: "Which of these is a composite number?", answerType: "multiple-choice", choices: ["3", "5", "9", "11"], correctAnswer: "9" },
+      { id: "g4q22", prompt: "What is 5.8 − 2.3?", answerType: "multiple-choice", choices: ["3.2", "3.5", "3.8", "4.1"], correctAnswer: "3.5" },
+      { id: "g4q23", prompt: "A rectangle has a length of 9 cm and a width of 4 cm. What is its area?", answerType: "multiple-choice", choices: ["26 sq cm", "32 sq cm", "36 sq cm", "40 sq cm"], correctAnswer: "36 sq cm" },
+      { id: "g4q24", prompt: "What is 144 ÷ 12?", answerType: "multiple-choice", choices: ["10", "11", "12", "13"], correctAnswer: "12" },
+      { id: "g4q25", prompt: "Round 849 to the nearest ten.", answerType: "multiple-choice", choices: ["840", "850", "800", "900"], correctAnswer: "850" },
+      { id: "g4q26", prompt: "What is 9/12 − 5/12?", answerType: "multiple-choice", choices: ["4/12", "3/12", "2/12", "5/12"], correctAnswer: "4/12" },
+      { id: "g4q27", prompt: "An angle that measures 45 degrees is called:", answerType: "multiple-choice", choices: ["Acute", "Right", "Obtuse", "Reflex"], correctAnswer: "Acute" },
+      { id: "g4q28", prompt: "What is 602 × 5?", answerType: "multiple-choice", choices: ["3000", "3010", "3020", "3100"], correctAnswer: "3010" },
+      { id: "g4q29", prompt: "How many lines of symmetry does a square have?", answerType: "multiple-choice", choices: ["2", "4", "6", "8"], correctAnswer: "4" },
+      { id: "g4q30", prompt: "What is 23 × 4?", answerType: "multiple-choice", choices: ["82", "92", "102", "112"], correctAnswer: "92" },
+      { id: "g4q31", prompt: "Which fraction is larger: 2/3 or 2/5?", answerType: "multiple-choice", choices: ["2/5", "2/3", "They are equal", "Cannot tell"], correctAnswer: "2/3" },
+      { id: "g4q32", prompt: "What is 8.64 + 1.25?", answerType: "multiple-choice", choices: ["9.79", "9.89", "9.99", "10.09"], correctAnswer: "9.89" },
+      { id: "g4q33", prompt: "What is 360 ÷ 9?", answerType: "multiple-choice", choices: ["30", "40", "50", "60"], correctAnswer: "40" },
+      { id: "g4q34", prompt: "Round 12,845 to the nearest thousand.", answerType: "multiple-choice", choices: ["12,000", "12,800", "13,000", "14,000"], correctAnswer: "13,000" },
+      { id: "g4q35", prompt: "What is 1/6 + 3/6?", answerType: "multiple-choice", choices: ["2/6", "4/6", "4/12", "5/6"], correctAnswer: "4/6" },
+      { id: "g4q36", prompt: "How many grams are in 1 kilogram?", answerType: "multiple-choice", choices: ["100", "500", "1000", "10000"], correctAnswer: "1000" },
+      { id: "g4q37", prompt: "What is 708 × 3?", answerType: "multiple-choice", choices: ["2104", "2114", "2124", "2224"], correctAnswer: "2124" },
+      { id: "g4q38", prompt: "How many sides does a heptagon have?", answerType: "multiple-choice", choices: ["6", "7", "8", "9"], correctAnswer: "7" },
+      { id: "g4q39", prompt: "What is 18 × 5?", answerType: "multiple-choice", choices: ["80", "85", "90", "95"], correctAnswer: "90" },
+      { id: "g4q40", prompt: "Which of these is a prime number?", answerType: "multiple-choice", choices: ["4", "9", "13", "15"], correctAnswer: "13" },
+      { id: "g4q41", prompt: "What is 9.4 − 3.8?", answerType: "multiple-choice", choices: ["5.4", "5.6", "5.8", "6.2"], correctAnswer: "5.6" },
+      { id: "g4q42", prompt: "A rectangle has perimeter 20 cm. If length is 6 cm, what is its width?", answerType: "multiple-choice", choices: ["3 cm", "4 cm", "5 cm", "6 cm"], correctAnswer: "4 cm" },
+      { id: "g4q43", prompt: "What is 720 ÷ 8?", answerType: "multiple-choice", choices: ["70", "80", "90", "100"], correctAnswer: "90" },
+      { id: "g4q44", prompt: "Round 538 to the nearest hundred.", answerType: "multiple-choice", choices: ["500", "540", "600", "530"], correctAnswer: "500" },
+      { id: "g4q45", prompt: "What is 11/15 − 4/15?", answerType: "multiple-choice", choices: ["5/15", "6/15", "7/15", "8/15"], correctAnswer: "7/15" },
+      { id: "g4q46", prompt: "Which type of triangle has one angle measuring 90 degrees?", answerType: "multiple-choice", choices: ["Acute", "Obtuse", "Right", "Equilateral"], correctAnswer: "Right" },
+      { id: "g4q47", prompt: "What is 803 × 6?", answerType: "multiple-choice", choices: ["4808", "4818", "4828", "4918"], correctAnswer: "4818" },
+      { id: "g4q48", prompt: "How many lines of symmetry does an equilateral triangle have?", answerType: "multiple-choice", choices: ["1", "2", "3", "4"], correctAnswer: "3" },
+      { id: "g4q49", prompt: "What is 26 × 3?", answerType: "multiple-choice", choices: ["68", "72", "78", "82"], correctAnswer: "78" },
+      { id: "g4q50", prompt: "What is 5/100 expressed as a decimal?", answerType: "multiple-choice", choices: ["0.5", "0.05", "0.005", "0.50"], correctAnswer: "0.05" }
     ],
-
-    // ── Grade 5 ──────────────────────────────────────────────────────────────
+    // ── GRADE 5 (50 Questions) ──────────────────────────────────────────────
     5: [
-      {
-        id: "g5q1",
-        prompt: "What is 8 × 8?",
-        answerType: "multiple-choice",
-        choices: ["64", "72", "80", "88"],
-        correctAnswer: "64"
-      },
-      {
-        id: "g5q2",
-        prompt: "What is the area of a square with side length 9?",
-        answerType: "multiple-choice",
-        choices: ["90", "81", "50", "36"],
-        correctAnswer: "81"
-      },
-      {
-        id: "g5q3",
-        prompt: "Which of these is a prime number?",
-        answerType: "multiple-choice",
-        choices: ["9", "15", "53", "21"],
-        correctAnswer: "53"
-      },
-      {
-        id: "g5q4",
-        prompt: "What is 3/4 × 8?",
-        answerType: "multiple-choice",
-        choices: ["3", "4", "6", "8"],
-        correctAnswer: "6"
-      },
-      {
-        id: "g5q5",
-        prompt: "Solve using order of operations: 2 + 3 × 4",
-        answerType: "multiple-choice",
-        choices: ["12", "14", "16", "20"],
-        correctAnswer: "14"
-      },
-      {
-        id: "g5q6",
-        prompt: "What is 15% of 60?",
-        answerType: "multiple-choice",
-        choices: ["6", "9", "12", "15"],
-        correctAnswer: "9"
-      },
-      {
-        id: "g5q7",
-        prompt: "A cube has a side length of 4. What is its volume?",
-        answerType: "multiple-choice",
-        choices: ["16", "32", "48", "64"],
-        correctAnswer: "64"
-      },
-      {
-        id: "g5q8",
-        prompt: "What is 2.5 × 4?",
-        answerType: "multiple-choice",
-        choices: ["6", "8", "10", "12"],
-        correctAnswer: "10"
-      },
-      {
-        id: "g5q9",
-        prompt: "Convert 3/4 to a decimal.",
-        answerType: "multiple-choice",
-        choices: ["0.25", "0.34", "0.43", "0.75"],
-        correctAnswer: "0.75"
-      },
-      {
-        id: "g5q10",
-        prompt: "What is the LCM of 4 and 6?",
-        answerType: "multiple-choice",
-        choices: ["6", "8", "12", "24"],
-        correctAnswer: "12"
-      }
+      { id: "g5q1", prompt: "What is 12 × 8?", answerType: "multiple-choice", choices: ["76", "86", "96", "106"], correctAnswer: "96" },
+      { id: "g5q2", prompt: "What is the area of a rectangle with length 10 and width 5?", answerType: "multiple-choice", choices: ["15", "25", "50", "60"], correctAnswer: "50" },
+      { id: "g5q3", prompt: "Which of these is a prime number?", answerType: "multiple-choice", choices: ["9", "15", "17", "21"], correctAnswer: "17" },
+      { id: "g5q4", prompt: "What is 3/4 × 8?", answerType: "multiple-choice", choices: ["3", "4", "6", "8"], correctAnswer: "6" },
+      { id: "g5q5", prompt: "Solve using order of operations: 2 + 3 × 4", answerType: "multiple-choice", choices: ["12", "14", "16", "20"], correctAnswer: "14" },
+      { id: "g5q6", prompt: "What is 15% of 60?", answerType: "multiple-choice", choices: ["6", "9", "12", "15"], correctAnswer: "9" },
+      { id: "g5q7", prompt: "A cube has a side length of 4. What is its volume?", answerType: "multiple-choice", choices: ["16", "32", "48", "64"], correctAnswer: "64" },
+      { id: "g5q8", prompt: "What is 2.5 × 4?", answerType: "multiple-choice", choices: ["6", "8", "10", "12"], correctAnswer: "10" },
+      { id: "g5q9", prompt: "Convert 3/4 to a decimal.", answerType: "multiple-choice", choices: ["0.25", "0.34", "0.43", "0.75"], correctAnswer: "0.75" },
+      { id: "g5q10", prompt: "What is the LCM of 4 and 6?", answerType: "multiple-choice", choices: ["6", "8", "12", "24"], correctAnswer: "12" },
+      { id: "g5q11", prompt: "What is 14 × 11?", answerType: "multiple-choice", choices: ["144", "154", "164", "174"], correctAnswer: "154" },
+      { id: "g5q12", prompt: "A rectangular prism has length 5, width 3, and height 2. What is its volume?", answerType: "multiple-choice", choices: ["15", "20", "25", "30"], correctAnswer: "30" },
+      { id: "g5q13", prompt: "Which digit is in the hundredths place of 4.872?", answerType: "multiple-choice", choices: ["4", "8", "7", "2"], correctAnswer: "7" },
+      { id: "g5q14", prompt: "What is 1/2 + 1/4?", answerType: "multiple-choice", choices: ["2/6", "3/4", "1/3", "2/4"], correctAnswer: "3/4" },
+      { id: "g5q15", prompt: "Solve: (5 + 3) × 2 − 4", answerType: "multiple-choice", choices: ["8", "12", "16", "20"], correctAnswer: "12" },
+      { id: "g5q16", prompt: "What is 35% of 200?", answerType: "multiple-choice", choices: ["50", "60", "70", "80"], correctAnswer: "70" },
+      { id: "g5q17", prompt: "What is 3.5 × 2.0?", answerType: "multiple-choice", choices: ["5.5", "6.0", "7.0", "8.0"], correctAnswer: "7.0" },
+      { id: "g5q18", prompt: "Convert 0.4 to a fraction in simplest form.", answerType: "multiple-choice", choices: ["1/4", "2/5", "4/10", "4/5"], correctAnswer: "2/5" },
+      { id: "g5q19", prompt: "What is the GCF of 12 and 18?", answerType: "multiple-choice", choices: ["2", "3", "6", "9"], correctAnswer: "6" },
+      { id: "g5q20", prompt: "What is 5/6 − 1/3?", answerType: "multiple-choice", choices: ["1/2", "4/6", "1/3", "2/3"], correctAnswer: "1/2" },
+      { id: "g5q21", prompt: "What is 180 ÷ 15?", answerType: "multiple-choice", choices: ["10", "11", "12", "13"], correctAnswer: "12" },
+      { id: "g5q22", prompt: "A cuboid has sides 6 cm, 4 cm, and 5 cm. What is its volume?", answerType: "multiple-choice", choices: ["100 sq cm", "120 cubic cm", "140 cubic cm", "150 cubic cm"], correctAnswer: "120 cubic cm" },
+      { id: "g5q23", prompt: "Which digit is in the tenths place of 13.924?", answerType: "multiple-choice", choices: ["1", "3", "9", "2"], correctAnswer: "9" },
+      { id: "g5q24", prompt: "What is 2/3 + 1/6?", answerType: "multiple-choice", choices: ["3/9", "5/6", "4/6", "3/6"], correctAnswer: "5/6" },
+      { id: "g5q25", prompt: "Solve: 12 ÷ (3 + 1) × 5", answerType: "multiple-choice", choices: ["15", "20", "25", "30"], correctAnswer: "15" },
+      { id: "g5q26", prompt: "What is 45% of 80?", answerType: "multiple-choice", choices: ["32", "34", "36", "38"], correctAnswer: "36" },
+      { id: "g5q27", prompt: "What is 1.25 × 8?", answerType: "multiple-choice", choices: ["8.5", "9.0", "9.5", "10.0"], correctAnswer: "10.0" },
+      { id: "g5q28", prompt: "Convert 7/20 to a decimal.", answerType: "multiple-choice", choices: ["0.35", "0.45", "0.70", "0.75"], correctAnswer: "0.35" },
+      { id: "g5q29", prompt: "What is the LCM of 8 and 12?", answerType: "multiple-choice", choices: ["16", "24", "32", "48"], correctAnswer: "24" },
+      { id: "g5q30", prompt: "What is 2/5 × 15?", answerType: "multiple-choice", choices: ["4", "5", "6", "8"], correctAnswer: "6" },
+      { id: "g5q31", prompt: "What is 225 ÷ 15?", answerType: "multiple-choice", choices: ["13", "14", "15", "16"], correctAnswer: "15" },
+      { id: "g5q32", prompt: "A box is 8 inches long, 4 inches wide, and 3 inches high. What is its volume?", answerType: "multiple-choice", choices: ["84", "96", "108", "120"], correctAnswer: "96" },
+      { id: "g5q33", prompt: "What is the place value of 9 in 0.295?", answerType: "multiple-choice", choices: ["Tenths", "Hundredths", "Thousandths", "Ones"], correctAnswer: "Hundredths" },
+      { id: "g5q34", prompt: "What is 3/5 + 1/2?", answerType: "multiple-choice", choices: ["4/7", "11/10", "9/10", "7/10"], correctAnswer: "11/10" },
+      { id: "g5q35", prompt: "Solve: 10 + 20 × 2 − 5", answerType: "multiple-choice", choices: ["55", "45", "35", "25"], correctAnswer: "45" },
+      { id: "g5q36", prompt: "What is 75% of 40?", answerType: "multiple-choice", choices: ["20", "25", "30", "35"], correctAnswer: "30" },
+      { id: "g5q37", prompt: "What is 0.75 × 12?", answerType: "multiple-choice", choices: ["7", "8", "9", "10"], correctAnswer: "9" },
+      { id: "g5q38", prompt: "Convert 0.85 to a fraction in simplest form.", answerType: "multiple-choice", choices: ["17/20", "85/100", "8/5", "3/4"], correctAnswer: "17/20" },
+      { id: "g5q39", prompt: "What is the GCF of 24 and 36?", answerType: "multiple-choice", choices: ["6", "8", "12", "18"], correctAnswer: "12" },
+      { id: "g5q40", prompt: "What is 7/8 − 1/4?", answerType: "multiple-choice", choices: ["6/8", "5/8", "1/2", "3/8"], correctAnswer: "5/8" },
+      { id: "g5q41", prompt: "What is 15 × 12?", answerType: "multiple-choice", choices: ["160", "170", "180", "190"], correctAnswer: "180" },
+      { id: "g5q42", prompt: "A cube has a volume of 27 cubic inches. What is the length of each edge?", answerType: "multiple-choice", choices: ["3 inches", "4 inches", "5 inches", "9 inches"], correctAnswer: "3 inches" },
+      { id: "g5q43", prompt: "Which digit is in the thousandths place of 0.1234?", answerType: "multiple-choice", choices: ["1", "2", "3", "4"], correctAnswer: "3" },
+      { id: "g5q44", prompt: "What is 1/3 + 2/9?", answerType: "multiple-choice", choices: ["3/12", "5/9", "4/9", "2/9"], correctAnswer: "5/9" },
+      { id: "g5q45", prompt: "Solve: (3 × 4 + 8) ÷ 4", answerType: "multiple-choice", choices: ["4", "5", "6", "8"], correctAnswer: "5" },
+      { id: "g5q46", prompt: "What is 80% of 150?", answerType: "multiple-choice", choices: ["100", "110", "120", "130"], correctAnswer: "120" },
+      { id: "g5q47", prompt: "What is 2.25 × 4?", answerType: "multiple-choice", choices: ["8", "8.5", "9.0", "9.5"], correctAnswer: "9.0" },
+      { id: "g5q48", prompt: "Convert 9/25 to a decimal.", answerType: "multiple-choice", choices: ["0.36", "0.45", "0.75", "0.90"], correctAnswer: "0.36" },
+      { id: "g5q49", prompt: "What is the LCM of 9 and 15?", answerType: "multiple-choice", choices: ["30", "45", "60", "75"], correctAnswer: "45" },
+      { id: "g5q50", prompt: "What is 4/7 of 21?", answerType: "multiple-choice", choices: ["10", "12", "14", "16"], correctAnswer: "12" }
     ],
-
-    // ── Grade 6 ──────────────────────────────────────────────────────────────
+    // ── GRADE 6 (50 Questions) ──────────────────────────────────────────────
     6: [
-      {
-        id: "g6q1",
-        prompt: "Which ratio is equivalent to 3:4?",
-        answerType: "multiple-choice",
-        choices: ["4:5", "5:6", "6:8", "9:16"],
-        correctAnswer: "6:8"
-      },
-      {
-        id: "g6q2",
-        prompt: "What is 25% of 80?",
-        answerType: "multiple-choice",
-        choices: ["15", "20", "25", "40"],
-        correctAnswer: "20"
-      },
-      {
-        id: "g6q3",
-        prompt: "Solve for x: x + 7 = 15",
-        answerType: "multiple-choice",
-        choices: ["6", "7", "8", "9"],
-        correctAnswer: "8"
-      },
-      {
-        id: "g6q4",
-        prompt: "What is −5 + 8?",
-        answerType: "multiple-choice",
-        choices: ["−13", "−3", "3", "13"],
-        correctAnswer: "3"
-      },
-      {
-        id: "g6q5",
-        prompt: "What is the mean of: 4, 8, 6, 10, 2?",
-        answerType: "multiple-choice",
-        choices: ["5", "6", "7", "8"],
-        correctAnswer: "6"
-      },
-      {
-        id: "g6q6",
-        prompt: "A bag has 3 red and 2 blue balls. What is the probability of picking a red ball?",
-        answerType: "multiple-choice",
-        choices: ["1/3", "2/5", "1/2", "3/5"],
-        correctAnswer: "3/5"
-      },
-      {
-        id: "g6q7",
-        prompt: "What is the area of a triangle with base 10 and height 6?",
-        answerType: "multiple-choice",
-        choices: ["15", "20", "30", "60"],
-        correctAnswer: "30"
-      },
-      {
-        id: "g6q8",
-        prompt: "Simplify: 4x + 2x − 3x",
-        answerType: "multiple-choice",
-        choices: ["x", "2x", "3x", "5x"],
-        correctAnswer: "3x"
-      },
-      {
-        id: "g6q9",
-        prompt: "What is 60% expressed as a fraction in simplest form?",
-        answerType: "multiple-choice",
-        choices: ["2/3", "3/5", "3/6", "6/10"],
-        correctAnswer: "3/5"
-      },
-      {
-        id: "g6q10",
-        prompt: "The ratio of boys to girls is 3:2. There are 15 boys. How many girls are there?",
-        answerType: "multiple-choice",
-        choices: ["6", "8", "10", "12"],
-        correctAnswer: "10"
-      }
+      { id: "g6q1", prompt: "Which ratio is equivalent to 3:4?", answerType: "multiple-choice", choices: ["4:5", "5:6", "6:8", "9:16"], correctAnswer: "6:8" },
+      { id: "g6q2", prompt: "What is 25% of 80?", answerType: "multiple-choice", choices: ["15", "20", "25", "40"], correctAnswer: "20" },
+      { id: "g6q3", prompt: "Solve for x: x + 7 = 15", answerType: "multiple-choice", choices: ["6", "7", "8", "9"], correctAnswer: "8" },
+      { id: "g6q4", prompt: "What is −5 + 8?", answerType: "multiple-choice", choices: ["−13", "−3", "3", "13"], correctAnswer: "3" },
+      { id: "g6q5", prompt: "What is the mean of: 4, 8, 6, 10, 2?", answerType: "multiple-choice", choices: ["5", "6", "7", "8"], correctAnswer: "6" },
+      { id: "g6q6", prompt: "A bag has 3 red and 2 blue balls. What is the probability of picking a red ball?", answerType: "multiple-choice", choices: ["1/3", "2/5", "1/2", "3/5"], correctAnswer: "3/5" },
+      { id: "g6q7", prompt: "What is the area of a triangle with base 10 and height 6?", answerType: "multiple-choice", choices: ["15", "20", "30", "60"], correctAnswer: "30" },
+      { id: "g6q8", prompt: "Simplify: 4x + 2x − 3x", answerType: "multiple-choice", choices: ["x", "2x", "3x", "5x"], correctAnswer: "3x" },
+      { id: "g6q9", prompt: "What is 60% expressed as a fraction in simplest form?", answerType: "multiple-choice", choices: ["2/3", "3/5", "3/6", "6/10"], correctAnswer: "3/5" },
+      { id: "g6q10", prompt: "The ratio of boys to girls is 3:2. There are 15 boys. How many girls are there?", answerType: "multiple-choice", choices: ["6", "8", "10", "12"], correctAnswer: "10" },
+      { id: "g6q11", prompt: "What is 2³?", answerType: "multiple-choice", choices: ["6", "8", "9", "12"], correctAnswer: "8" },
+      { id: "g6q12", prompt: "Simplify the expression: 3(x + 2) − 4", answerType: "multiple-choice", choices: ["3x − 2", "3x + 2", "3x + 6", "3x − 4"], correctAnswer: "3x + 2" },
+      { id: "g6q13", prompt: "What is −12 − 5?", answerType: "multiple-choice", choices: ["−17", "−7", "7", "17"], correctAnswer: "−17" },
+      { id: "g6q14", prompt: "What is the median of: 3, 9, 4, 7, 5?", answerType: "multiple-choice", choices: ["4", "5", "7", "9"], correctAnswer: "5" },
+      { id: "g6q15", prompt: "Solve for y: 4y = 28", answerType: "multiple-choice", choices: ["6", "7", "8", "9"], correctAnswer: "7" },
+      { id: "g6q16", prompt: "What is 12% of 50?", answerType: "multiple-choice", choices: ["5", "6", "7", "8"], correctAnswer: "6" },
+      { id: "g6q17", prompt: "Equivalent ratio of 5:6 is:", answerType: "multiple-choice", choices: ["10:12", "15:20", "20:25", "25:35"], correctAnswer: "10:12" },
+      { id: "g6q18", prompt: "What is the absolute value of −15?", answerType: "multiple-choice", choices: ["−15", "0", "15", "30"], correctAnswer: "15" },
+      { id: "g6q19", prompt: "What is the area of a parallelogram with base 8 and height 5?", answerType: "multiple-choice", choices: ["20", "30", "40", "50"], correctAnswer: "40" },
+      { id: "g6q20", prompt: "What is 1/2 ÷ 1/4?", answerType: "multiple-choice", choices: ["1/8", "1/2", "2", "4"], correctAnswer: "2" },
+      { id: "g6q21", prompt: "What is 3⁴?", answerType: "multiple-choice", choices: ["12", "27", "64", "81"], correctAnswer: "81" },
+      { id: "g6q22", prompt: "Simplify: 5x + 3 − 2x + 7", answerType: "multiple-choice", choices: ["3x + 10", "7x + 10", "3x − 4", "7x − 4"], correctAnswer: "3x + 10" },
+      { id: "g6q23", prompt: "What is −8 × 4?", answerType: "multiple-choice", choices: ["−32", "−12", "12", "32"], correctAnswer: "−32" },
+      { id: "g6q24", prompt: "What is the mode of: 2, 5, 2, 8, 5, 2, 9?", answerType: "multiple-choice", choices: ["2", "5", "8", "9"], correctAnswer: "2" },
+      { id: "g6q25", prompt: "Solve for x: x − 9 = 14", answerType: "multiple-choice", choices: ["5", "15", "23", "25"], correctAnswer: "23" },
+      { id: "g6q26", prompt: "What is 40% of 120?", answerType: "multiple-choice", choices: ["42", "44", "48", "52"], correctAnswer: "48" },
+      { id: "g6q27", prompt: "Which ratio is equivalent to 2:7?", answerType: "multiple-choice", choices: ["4:14", "6:20", "8:30", "10:35"], correctAnswer: "4:14" },
+      { id: "g6q28", prompt: "Which is the smallest: −5, −9, 0, 3?", answerType: "multiple-choice", choices: ["0", "3", "−5", "−9"], correctAnswer: "−9" },
+      { id: "g6q29", prompt: "What is the area of a triangle with base 12 cm and height 5 cm?", answerType: "multiple-choice", choices: ["15 sq cm", "30 sq cm", "45 sq cm", "60 sq cm"], correctAnswer: "30 sq cm" },
+      { id: "g6q30", prompt: "What is 2/3 ÷ 5/6?", answerType: "multiple-choice", choices: ["5/9", "4/5", "9/10", "10/9"], correctAnswer: "4/5" },
+      { id: "g6q31", prompt: "What is 5²?", answerType: "multiple-choice", choices: ["10", "20", "25", "30"], correctAnswer: "25" },
+      { id: "g6q32", prompt: "Simplify: 6(y − 1) + 2y", answerType: "multiple-choice", choices: ["8y − 6", "8y + 6", "4y − 6", "6y − 6"], correctAnswer: "8y − 6" },
+      { id: "g6q33", prompt: "What is −18 ÷ −3?", answerType: "multiple-choice", choices: ["−6", "−9", "6", "9"], correctAnswer: "6" },
+      { id: "g6q34", prompt: "What is the range of: 10, 2, 8, 15, 6?", answerType: "multiple-choice", choices: ["8", "10", "13", "15"], correctAnswer: "13" },
+      { id: "g6q35", prompt: "Solve for z: z / 3 = 8?", answerType: "multiple-choice", choices: ["5", "11", "24", "32"], correctAnswer: "24" },
+      { id: "g6q36", prompt: "What is 15% of 80?", answerType: "multiple-choice", choices: ["8", "10", "12", "15"], correctAnswer: "12" },
+      { id: "g6q37", prompt: "Equivalent ratio of 4:5 is:", answerType: "multiple-choice", choices: ["8:10", "12:15", "16:20", "All of the above"], correctAnswer: "All of the above" },
+      { id: "g6q38", prompt: "What is the absolute value of 27?", answerType: "multiple-choice", choices: ["−27", "0", "27", "54"], correctAnswer: "27" },
+      { id: "g6q39", prompt: "What is the area of a parallelogram with base 11 and height 6?", answerType: "multiple-choice", choices: ["33", "44", "66", "77"], correctAnswer: "66" },
+      { id: "g6q40", prompt: "What is 3/4 ÷ 1/2?", answerType: "multiple-choice", choices: ["3/8", "2/3", "3/2", "1"], correctAnswer: "3/2" },
+      { id: "g6q41", prompt: "What is 10³?", answerType: "multiple-choice", choices: ["100", "300", "1000", "3000"], correctAnswer: "1000" },
+      { id: "g6q42", prompt: "Simplify: 10a − 4a + 3b", answerType: "multiple-choice", choices: ["6a + 3b", "14a + 3b", "6ab", "9ab"], correctAnswer: "6a + 3b" },
+      { id: "g6q43", prompt: "What is 7 × −6?", answerType: "multiple-choice", choices: ["−42", "−13", "13", "42"], correctAnswer: "−42" },
+      { id: "g6q44", prompt: "Find the mean of: 12, 18, 20?", answerType: "multiple-choice", choices: ["15", "16", "17", "18"], correctAnswer: "16" },
+      { id: "g6q45", prompt: "Solve for x: x + 15 = 42", answerType: "multiple-choice", choices: ["25", "27", "37", "57"], correctAnswer: "27" },
+      { id: "g6q46", prompt: "What is 75% of 160?", answerType: "multiple-choice", choices: ["100", "110", "120", "130"], correctAnswer: "120" },
+      { id: "g6q47", prompt: "Which ratio is equivalent to 1:3?", answerType: "multiple-choice", choices: ["2:6", "3:9", "4:12", "All of the above"], correctAnswer: "All of the above" },
+      { id: "g6q48", prompt: "Which is the largest: −12, −4, −8, −20?", answerType: "multiple-choice", choices: ["−4", "−8", "−12", "−20"], correctAnswer: "−4" },
+      { id: "g6q49", prompt: "What is the area of a triangle with base 14 and height 4?", answerType: "multiple-choice", choices: ["28", "36", "48", "56"], correctAnswer: "28" },
+      { id: "g6q50", prompt: "What is 4/5 ÷ 2/3?", answerType: "multiple-choice", choices: ["8/15", "5/6", "6/5", "1"], correctAnswer: "6/5" }
     ],
-
-    // ── Grade 7 ──────────────────────────────────────────────────────────────
+    // ── GRADE 7 (50 Questions) ──────────────────────────────────────────────
     7: [
-      {
-        id: "g7q1",
-        prompt: "Solve for x: 2x + 3 = 11",
-        answerType: "multiple-choice",
-        choices: ["3", "4", "5", "7"],
-        correctAnswer: "4"
-      },
-      {
-        id: "g7q2",
-        prompt: "What is the circumference of a circle with radius 7? (Use π ≈ 22/7)",
-        answerType: "multiple-choice",
-        choices: ["22", "44", "49", "154"],
-        correctAnswer: "44"
-      },
-      {
-        id: "g7q3",
-        prompt: "What is −3 × −4?",
-        answerType: "multiple-choice",
-        choices: ["−12", "−7", "7", "12"],
-        correctAnswer: "12"
-      },
-      {
-        id: "g7q4",
-        prompt: "A jacket costs $80 with a 15% discount. What is the sale price?",
-        answerType: "multiple-choice",
-        choices: ["$65", "$68", "$70", "$72"],
-        correctAnswer: "$68"
-      },
-      {
-        id: "g7q5",
-        prompt: "Simplify: 2(x + 3) + x",
-        answerType: "multiple-choice",
-        choices: ["3x", "2x + 6", "3x + 3", "3x + 6"],
-        correctAnswer: "3x + 6"
-      },
-      {
-        id: "g7q6",
-        prompt: "What is the probability of rolling an even number on a standard die?",
-        answerType: "multiple-choice",
-        choices: ["1/6", "1/3", "1/2", "2/3"],
-        correctAnswer: "1/2"
-      },
-      {
-        id: "g7q7",
-        prompt: "If y = 2x − 1, what is y when x = 4?",
-        answerType: "multiple-choice",
-        choices: ["6", "7", "8", "9"],
-        correctAnswer: "7"
-      },
-      {
-        id: "g7q8",
-        prompt: "What is the surface area of a cube with side length 3?",
-        answerType: "multiple-choice",
-        choices: ["18", "27", "36", "54"],
-        correctAnswer: "54"
-      },
-      {
-        id: "g7q9",
-        prompt: "Which of these is equivalent to 0.6?",
-        answerType: "multiple-choice",
-        choices: ["2/3", "3/5", "5/6", "6/5"],
-        correctAnswer: "3/5"
-      },
-      {
-        id: "g7q10",
-        prompt: "Solve: 3(x − 2) = 9",
-        answerType: "multiple-choice",
-        choices: ["3", "4", "5", "7"],
-        correctAnswer: "5"
-      }
+      { id: "g7q1", prompt: "Solve for x: 2x + 3 = 11", answerType: "multiple-choice", choices: ["3", "4", "5", "7"], correctAnswer: "4" },
+      { id: "g7q2", prompt: "What is the circumference of a circle with radius 7? (Use π ≈ 22/7)", answerType: "multiple-choice", choices: ["22", "44", "49", "154"], correctAnswer: "44" },
+      { id: "g7q3", prompt: "What is −3 × −4?", answerType: "multiple-choice", choices: ["−12", "−7", "7", "12"], correctAnswer: "12" },
+      { id: "g7q4", prompt: "A jacket costs $80 with a 15% discount. What is the sale price?", answerType: "multiple-choice", choices: ["$65", "$68", "$70", "$72"], correctAnswer: "$68" },
+      { id: "g7q5", prompt: "Simplify: 2(x + 3) + x", answerType: "multiple-choice", choices: ["3x", "2x + 6", "3x + 3", "3x + 6"], correctAnswer: "3x + 6" },
+      { id: "g7q6", prompt: "What is the probability of rolling an even number on a standard die?", answerType: "multiple-choice", choices: ["1/6", "1/3", "1/2", "2/3"], correctAnswer: "1/2" },
+      { id: "g7q7", prompt: "If y = 2x − 1, what is y when x = 4?", answerType: "multiple-choice", choices: ["6", "7", "8", "9"], correctAnswer: "7" },
+      { id: "g7q8", prompt: "What is the surface area of a cube with side length 3?", answerType: "multiple-choice", choices: ["18", "27", "36", "54"], correctAnswer: "54" },
+      { id: "g7q9", prompt: "Which of these is equivalent to 0.6?", answerType: "multiple-choice", choices: ["2/3", "3/5", "5/6", "6/5"], correctAnswer: "3/5" },
+      { id: "g7q10", prompt: "Solve: 3(x − 2) = 9", answerType: "multiple-choice", choices: ["3", "4", "5", "7"], correctAnswer: "5" },
+      { id: "g7q11", prompt: "Solve for y: 3y − 5 = 10", answerType: "multiple-choice", choices: ["3", "4", "5", "6"], correctAnswer: "5" },
+      { id: "g7q12", prompt: "What is the area of a circle with radius 7? (Use π ≈ 22/7)", answerType: "multiple-choice", choices: ["44", "88", "154", "196"], correctAnswer: "154" },
+      { id: "g7q13", prompt: "What is −36 ÷ 9?", answerType: "multiple-choice", choices: ["−4", "−3", "3", "4"], correctAnswer: "−4" },
+      { id: "g7q14", prompt: "A cell phone is on sale for 20% off. The regular price is $250. How much is the discount?", answerType: "multiple-choice", choices: ["$20", "$40", "$50", "$60"], correctAnswer: "$50" },
+      { id: "g7q15", prompt: "Simplify: 4(a + 2) − 3a", answerType: "multiple-choice", choices: ["a + 8", "7a + 8", "a + 2", "7a + 2"], correctAnswer: "a + 8" },
+      { id: "g7q16", prompt: "What is the probability of flipping a coin twice and getting heads both times?", answerType: "multiple-choice", choices: ["1/2", "1/4", "1/8", "3/4"], correctAnswer: "1/4" },
+      { id: "g7q17", prompt: "If y = −3x + 2, what is y when x = −2?", answerType: "multiple-choice", choices: ["−4", "4", "8", "10"], correctAnswer: "8" },
+      { id: "g7q18", prompt: "What is the volume of a rectangular prism with length 6, width 4, and height 5?", answerType: "multiple-choice", choices: ["100", "120", "140", "150"], correctAnswer: "120" },
+      { id: "g7q19", prompt: "Which fraction is equal to 0.75?", answerType: "multiple-choice", choices: ["1/2", "3/5", "3/4", "4/5"], correctAnswer: "3/4" },
+      { id: "g7q20", prompt: "Solve: 4(x + 1) = 24", answerType: "multiple-choice", choices: ["4", "5", "6", "7"], correctAnswer: "5" },
+      { id: "g7q21", prompt: "Solve for z: 5z + 6 = 31", answerType: "multiple-choice", choices: ["4", "5", "6", "7"], correctAnswer: "5" },
+      { id: "g7q22", prompt: "What is the circumference of a circle with diameter 14? (Use π ≈ 22/7)", answerType: "multiple-choice", choices: ["22", "44", "88", "154"], correctAnswer: "44" },
+      { id: "g7q23", prompt: "What is −5 × −8?", answerType: "multiple-choice", choices: ["−40", "−13", "13", "40"], correctAnswer: "40" },
+      { id: "g7q24", prompt: "A meal costs $40. You want to leave a 15% tip. How much is the tip?", answerType: "multiple-choice", choices: ["$4.50", "$6.00", "$7.50", "$8.00"], correctAnswer: "$6.00" },
+      { id: "g7q25", prompt: "Simplify: 3(x − 4) + 2x", answerType: "multiple-choice", choices: ["5x − 12", "5x + 12", "x − 12", "x + 12"], correctAnswer: "5x − 12" },
+      { id: "g7q26", prompt: "What is the probability of rolling a number greater than 4 on a standard die?", answerType: "multiple-choice", choices: ["1/6", "1/3", "1/2", "2/3"], correctAnswer: "1/3" },
+      { id: "g7q27", prompt: "If y = x / 2 + 5, what is y when x = −6?", answerType: "multiple-choice", choices: ["2", "3", "4", "8"], correctAnswer: "2" },
+      { id: "g7q28", prompt: "What is the total surface area of a rectangular prism with dimensions 2x3x4?", answerType: "multiple-choice", choices: ["24", "48", "52", "60"], correctAnswer: "52" },
+      { id: "g7q29", prompt: "Which of these is equal to 1.25?", answerType: "multiple-choice", choices: ["1/4", "5/4", "3/2", "5/2"], correctAnswer: "5/4" },
+      { id: "g7q30", prompt: "Solve: 2(x − 5) = −6", answerType: "multiple-choice", choices: ["2", "3", "4", "5"], correctAnswer: "2" },
+      { id: "g7q31", prompt: "Solve for x: −3x + 4 = −8", answerType: "multiple-choice", choices: ["−4", "−2", "2", "4"], correctAnswer: "4" },
+      { id: "g7q32", prompt: "What is the area of a circle with diameter 28? (Use π ≈ 22/7)", answerType: "multiple-choice", choices: ["154", "308", "616", "1232"], correctAnswer: "616" },
+      { id: "g7q33", prompt: "What is −45 ÷ −5?", answerType: "multiple-choice", choices: ["−9", "−8", "8", "9"], correctAnswer: "9" },
+      { id: "g7q34", prompt: "A store buys a shirt for $15 and sells it with a 100% markup. What is the selling price?", answerType: "multiple-choice", choices: ["$15", "$20", "$30", "$40"], correctAnswer: "$30" },
+      { id: "g7q35", prompt: "Simplify: −2(x − 3) − 3x", answerType: "multiple-choice", choices: ["−5x + 6", "−5x − 6", "x + 6", "x − 6"], correctAnswer: "−5x + 6" },
+      { id: "g7q36", prompt: "What is the probability of drawing a red card from a standard deck of 52 cards?", answerType: "multiple-choice", choices: ["1/4", "1/2", "3/4", "1"], correctAnswer: "1/2" },
+      { id: "g7q37", prompt: "If y = −x − 5, what is y when x = −8?", answerType: "multiple-choice", choices: ["−13", "−3", "3", "13"], correctAnswer: "3" },
+      { id: "g7q38", prompt: "What is the volume of a cylinder with radius 3 and height 7? (Use π ≈ 22/7)", answerType: "multiple-choice", choices: ["66", "132", "198", "396"], correctAnswer: "198" },
+      { id: "g7q39", prompt: "Which of these is equal to 3/8?", answerType: "multiple-choice", choices: ["0.375", "0.38", "0.45", "0.75"], correctAnswer: "0.375" },
+      { id: "g7q40", prompt: "Solve: 5(x + 2) = 0", answerType: "multiple-choice", choices: ["−2", "0", "2", "5"], correctAnswer: "−2" },
+      { id: "g7q41", prompt: "Solve for y: −2y + 7 = 19", answerType: "multiple-choice", choices: ["−6", "−3", "3", "6"], correctAnswer: "−6" },
+      { id: "g7q42", prompt: "Find the area of a circle with radius 14 cm. (Use π ≈ 22/7)", answerType: "multiple-choice", choices: ["88 sq cm", "176 sq cm", "616 sq cm", "1232 sq cm"], correctAnswer: "616 sq cm" },
+      { id: "g7q43", prompt: "What is −7 × 9?", answerType: "multiple-choice", choices: ["−63", "−16", "16", "63"], correctAnswer: "−63" },
+      { id: "g7q44", prompt: "A toy is marked down by 30%. The original price was $40. What is the markdown price?", answerType: "multiple-choice", choices: ["$12", "$28", "$30", "$32"], correctAnswer: "$28" },
+      { id: "g7q45", prompt: "Simplify: 5(b − 2) − 2(b − 3)", answerType: "multiple-choice", choices: ["3b − 4", "3b + 4", "3b − 16", "7b − 4"], correctAnswer: "3b − 4" },
+      { id: "g7q46", prompt: "If you roll a standard die, what is the probability of rolling a prime number?", answerType: "multiple-choice", choices: ["1/6", "1/3", "1/2", "2/3"], correctAnswer: "1/2" },
+      { id: "g7q47", prompt: "If y = 4x − 7, what is y when x = 3?", answerType: "multiple-choice", choices: ["3", "4", "5", "6"], correctAnswer: "5" },
+      { id: "g7q48", prompt: "What is the surface area of a cube with edge 4?", answerType: "multiple-choice", choices: ["16", "64", "96", "128"], correctAnswer: "96" },
+      { id: "g7q49", prompt: "Which decimal is equivalent to 1/8?", answerType: "multiple-choice", choices: ["0.12", "0.125", "0.15", "0.25"], correctAnswer: "0.125" },
+      { id: "g7q50", prompt: "Solve: 6(x − 1) = 18", answerType: "multiple-choice", choices: ["2", "3", "4", "5"], correctAnswer: "4" }
     ],
-
-    // ── Grade 8 ──────────────────────────────────────────────────────────────
+    // ── GRADE 8 (50 Questions) ──────────────────────────────────────────────
     8: [
-      {
-        id: "g8q1",
-        prompt: "Given 2x + 3y = 12 and x = 3, what is y?",
-        answerType: "multiple-choice",
-        choices: ["1", "2", "3", "4"],
-        correctAnswer: "2"
-      },
-      {
-        id: "g8q2",
-        prompt: "What is √144?",
-        answerType: "multiple-choice",
-        choices: ["11", "12", "13", "14"],
-        correctAnswer: "12"
-      },
-      {
-        id: "g8q3",
-        prompt: "A right triangle has legs of length 6 and 8. What is the hypotenuse?",
-        answerType: "multiple-choice",
-        choices: ["8", "10", "12", "14"],
-        correctAnswer: "10"
-      },
-      {
-        id: "g8q4",
-        prompt: "What is 3² × 2³?",
-        answerType: "multiple-choice",
-        choices: ["36", "48", "64", "72"],
-        correctAnswer: "72"
-      },
-      {
-        id: "g8q5",
-        prompt: "If f(x) = 3x − 5, what is f(4)?",
-        answerType: "multiple-choice",
-        choices: ["6", "7", "8", "12"],
-        correctAnswer: "7"
-      },
-      {
-        id: "g8q6",
-        prompt: "Express 0.000045 in scientific notation.",
-        answerType: "multiple-choice",
-        choices: ["4.5 × 10⁻⁴", "4.5 × 10⁻⁵", "4.5 × 10⁵", "45 × 10⁻⁶"],
-        correctAnswer: "4.5 × 10⁻⁵"
-      },
-      {
-        id: "g8q7",
-        prompt: "What is the slope of the line y = 3x + 2?",
-        answerType: "multiple-choice",
-        choices: ["−3", "1/3", "2", "3"],
-        correctAnswer: "3"
-      },
-      {
-        id: "g8q8",
-        prompt: "Solve: x² = 49",
-        answerType: "multiple-choice",
-        choices: ["−7", "7", "±7", "49"],
-        correctAnswer: "±7"
-      },
-      {
-        id: "g8q9",
-        prompt: "A cylinder has radius 5 and height 10. What is its volume? (Use π ≈ 3.14)",
-        answerType: "multiple-choice",
-        choices: ["250", "314", "785", "1570"],
-        correctAnswer: "785"
-      },
-      {
-        id: "g8q10",
-        prompt: "Which equation represents a linear function?",
-        answerType: "multiple-choice",
-        choices: ["y = x²", "y = 1/x", "y = √x", "y = 2x + 1"],
-        correctAnswer: "y = 2x + 1"
-      }
+      { id: "g8q1", prompt: "Given 2x + 3y = 12 and x = 3, what is y?", answerType: "multiple-choice", choices: ["1", "2", "3", "4"], correctAnswer: "2" },
+      { id: "g8q2", prompt: "What is √144?", answerType: "multiple-choice", choices: ["11", "12", "13", "14"], correctAnswer: "12" },
+      { id: "g8q3", prompt: "A right triangle has legs of length 6 and 8. What is the hypotenuse?", answerType: "multiple-choice", choices: ["8", "10", "12", "14"], correctAnswer: "10" },
+      { id: "g8q4", prompt: "What is 3² × 2³?", answerType: "multiple-choice", choices: ["36", "48", "64", "72"], correctAnswer: "72" },
+      { id: "g8q5", prompt: "If f(x) = 3x − 5, what is f(4)?", answerType: "multiple-choice", choices: ["6", "7", "8", "12"], correctAnswer: "7" },
+      { id: "g8q6", prompt: "Express 0.000045 in scientific notation.", answerType: "multiple-choice", choices: ["4.5 × 10⁻⁴", "4.5 × 10⁻⁵", "4.5 × 10⁵", "45 × 10⁻⁶"], correctAnswer: "4.5 × 10⁻⁵" },
+      { id: "g8q7", prompt: "What is the slope of the line y = 3x + 2?", answerType: "multiple-choice", choices: ["−3", "1/3", "2", "3"], correctAnswer: "3" },
+      { id: "g8q8", prompt: "Solve: x² = 49", answerType: "multiple-choice", choices: ["−7", "7", "±7", "49"], correctAnswer: "±7" },
+      { id: "g8q9", prompt: "A cylinder has radius 5 and height 10. What is its volume? (Use π ≈ 3.14)", answerType: "multiple-choice", choices: ["250", "314", "785", "1570"], correctAnswer: "785" },
+      { id: "g8q10", prompt: "Which equation represents a linear function?", answerType: "multiple-choice", choices: ["y = x²", "y = 1/x", "y = √x", "y = 2x + 1"], correctAnswer: "y = 2x + 1" },
+      { id: "g8q11", prompt: "If 3x − 4 = 2x + 5, what is x?", answerType: "multiple-choice", choices: ["1", "5", "9", "10"], correctAnswer: "9" },
+      { id: "g8q12", prompt: "What is the cube root of 27?", answerType: "multiple-choice", choices: ["2", "3", "4", "9"], correctAnswer: "3" },
+      { id: "g8q13", prompt: "A right triangle has a hypotenuse of 13 and one leg of 5. What is the other leg?", answerType: "multiple-choice", choices: ["8", "10", "11", "12"], correctAnswer: "12" },
+      { id: "g8q14", prompt: "What is 5⁻²?", answerType: "multiple-choice", choices: ["−25", "−10", "1/10", "1/25"], correctAnswer: "1/25" },
+      { id: "g8q15", prompt: "If f(x) = −2x + 7, what is f(−3)?", answerType: "multiple-choice", choices: ["1", "10", "13", "14"], correctAnswer: "13" },
+      { id: "g8q16", prompt: "Express 35,000 in scientific notation.", answerType: "multiple-choice", choices: ["3.5 × 10³", "3.5 × 10⁴", "35 × 10³", "3.5 × 10⁻⁴"], correctAnswer: "3.5 × 10⁴" },
+      { id: "g8q17", prompt: "What is the y-intercept of the line y = −2x − 5?", answerType: "multiple-choice", choices: ["−5", "−2", "2", "5"], correctAnswer: "−5" },
+      { id: "g8q18", prompt: "Solve: x² − 81 = 0", answerType: "multiple-choice", choices: ["9", "−9", "±9", "81"], correctAnswer: "±9" },
+      { id: "g8q19", prompt: "A cone has radius 3 and height 7. What is its volume? (Use π ≈ 22/7)", answerType: "multiple-choice", choices: ["22", "66", "198", "594"], correctAnswer: "66" },
+      { id: "g8q20", prompt: "Which of these functions is non-linear?", answerType: "multiple-choice", choices: ["y = 3x", "y = x − 4", "y = x² + 1", "y = 2x + 3"], correctAnswer: "y = x² + 1" },
+      { id: "g8q21", prompt: "Solve the system: y = 2x and x + y = 9. What is x?", answerType: "multiple-choice", choices: ["2", "3", "4", "6"], correctAnswer: "3" },
+      { id: "g8q22", prompt: "What is the square root of 225?", answerType: "multiple-choice", choices: ["13", "14", "15", "25"], correctAnswer: "15" },
+      { id: "g8q23", prompt: "A line passes through (0,2) and (2,6). What is its slope?", answerType: "multiple-choice", choices: ["1", "2", "3", "4"], correctAnswer: "2" },
+      { id: "g8q24", prompt: "Simplify: (2³)⁴?", answerType: "multiple-choice", choices: ["2⁷", "2¹²", "8⁴", "16³"], correctAnswer: "2¹²" },
+      { id: "g8q25", prompt: "Which number is irrational?", answerType: "multiple-choice", choices: ["√4", "√9", "√10", "√16"], correctAnswer: "√10" },
+      { id: "g8q26", prompt: "Express 0.0072 in scientific notation.", answerType: "multiple-choice", choices: ["7.2 × 10⁻²", "7.2 × 10⁻³", "7.2 × 10³", "72 × 10⁻⁴"], correctAnswer: "7.2 × 10⁻³" },
+      { id: "g8q27", prompt: "What is the slope of a horizontal line?", answerType: "multiple-choice", choices: ["0", "1", "Undefined", "Infinite"], correctAnswer: "0" },
+      { id: "g8q28", prompt: "Solve: x³ = 64", answerType: "multiple-choice", choices: ["4", "±4", "8", "16"], correctAnswer: "4" },
+      { id: "g8q29", prompt: "A sphere has radius 3. What is its volume? (Use π ≈ 22/7)", answerType: "multiple-choice", choices: ["36", "72", "113", "154"], correctAnswer: "113" },
+      { id: "g8q30", prompt: "Which graph represents a linear function?", answerType: "multiple-choice", choices: ["A parabola", "A straight line", "A circle", "A wave"], correctAnswer: "A straight line" },
+      { id: "g8q31", prompt: "Solve the system: y = x + 1 and y = −x + 5. What is the intersection point?", answerType: "multiple-choice", choices: ["(1, 2)", "(2, 3)", "(3, 2)", "(2, 4)"], correctAnswer: "(2, 3)" },
+      { id: "g8q32", prompt: "What is the square root of 196?", answerType: "multiple-choice", choices: ["13", "14", "15", "16"], correctAnswer: "14" },
+      { id: "g8q33", prompt: "A line passes through (1,3) and (3,7). What is its slope?", answerType: "multiple-choice", choices: ["1", "2", "3", "4"], correctAnswer: "2" },
+      { id: "g8q34", prompt: "Simplify: 5³ × 5⁻¹?", answerType: "multiple-choice", choices: ["5", "10", "25", "125"], correctAnswer: "25" },
+      { id: "g8q35", prompt: "Which number is rational?", answerType: "multiple-choice", choices: ["π", "√2", "√3", "0.333..."], correctAnswer: "0.333..." },
+      { id: "g8q36", prompt: "Express 6,400,000 in scientific notation.", answerType: "multiple-choice", choices: ["6.4 × 10⁵", "6.4 × 10⁶", "6.4 × 10⁷", "64 × 10⁵"], correctAnswer: "6.4 × 10⁶" },
+      { id: "g8q37", prompt: "What is the slope of the line y = −x + 4?", answerType: "multiple-choice", choices: ["−1", "0", "1", "4"], correctAnswer: "−1" },
+      { id: "g8q38", prompt: "Solve: x² = 121", answerType: "multiple-choice", choices: ["11", "−11", "±11", "12.1"], correctAnswer: "±11" },
+      { id: "g8q39", prompt: "A cone has radius 6 and height 7. What is its volume? (Use π ≈ 22/7)", answerType: "multiple-choice", choices: ["132", "264", "528", "792"], correctAnswer: "264" },
+      { id: "g8q40", prompt: "Which of these is a linear function?", answerType: "multiple-choice", choices: ["y = 1/x", "y = x³", "y = x", "y = |x|"], correctAnswer: "y = x" },
+      { id: "g8q41", prompt: "Solve the system: x + y = 10 and x − y = 4. What is x?", answerType: "multiple-choice", choices: ["5", "6", "7", "8"], correctAnswer: "7" },
+      { id: "g8q42", prompt: "What is the square root of 400?", answerType: "multiple-choice", choices: ["10", "20", "30", "40"], correctAnswer: "20" },
+      { id: "g8q43", prompt: "A right triangle has leg 5 and hypotenuse 13. What is the other leg?", answerType: "multiple-choice", choices: ["8", "10", "12", "14"], correctAnswer: "12" },
+      { id: "g8q44", prompt: "Simplify: (3⁻²)⁻¹?", answerType: "multiple-choice", choices: ["1/9", "1/3", "3", "9"], correctAnswer: "3" },
+      { id: "g8q45", prompt: "Which number is irrational?", answerType: "multiple-choice", choices: ["√25", "√36", "√40", "√49"], correctAnswer: "√40" },
+      { id: "g8q46", prompt: "Express 0.000008 in scientific notation.", answerType: "multiple-choice", choices: ["8 × 10⁻⁵", "8 × 10⁻⁶", "8 × 10⁻⁷", "80 × 10⁻⁷"], correctAnswer: "8 × 10⁻⁶" },
+      { id: "g8q47", prompt: "What is the slope of the line 2y = 4x + 6?", answerType: "multiple-choice", choices: ["1", "2", "3", "4"], correctAnswer: "2" },
+      { id: "g8q48", prompt: "Solve: x³ = 125", answerType: "multiple-choice", choices: ["5", "±5", "15", "25"], correctAnswer: "5" },
+      { id: "g8q49", prompt: "A sphere has diameter 6. What is its volume? (Use π ≈ 3.14)", answerType: "multiple-choice", choices: ["36.2", "113.04", "154.6", "226.08"], correctAnswer: "113.04" },
+      { id: "g8q50", prompt: "Which equation is not linear?", answerType: "multiple-choice", choices: ["y = x", "y = 2x − 3", "y = 3/x", "y = −x + 5"], correctAnswer: "y = 3/x" }
     ]
-
   };
 
-  // Expose to global scope so app.js can access it.
   window.STARBORN_QUESTION_BANK = QUESTION_BANK;
-
 })();
